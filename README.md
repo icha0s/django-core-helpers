@@ -5,6 +5,24 @@
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
+
+## Quickstart
+
+Install
+
+```console
+pip install django-core-helpers
+```
+
+Add them to your INSTALLED_APPS:
+```python
+INSTALLED_APPS = [
+    ...
+    'core_helpers',
+    ...
+]
+```
+
 ## Prerequisites
 
 You will need:

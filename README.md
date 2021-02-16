@@ -18,7 +18,7 @@ pip install django-core-helpers
 
 You will need:
 
-- `python3.8` (see `Pipfile` for full version)
+- `python3.8` (see `pyproject.toml` for full version)
 - `django` with version `3.0`
 
 

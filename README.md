@@ -14,15 +14,6 @@ Install
 pip install django-core-helpers
 ```
 
-Add them to your INSTALLED_APPS:
-```python
-INSTALLED_APPS = [
-    ...
-    'core_helpers',
-    ...
-]
-```
-
 ## Prerequisites
 
 You will need:
@@ -36,7 +27,8 @@ You will need:
 When developing locally, we use:
 
 - [`editorconfig`](http://editorconfig.org/) plugin (**required**)
-- [`pipenv`](https://github.com/pypa/pipenv) (**required**)
+- [`poetry`](https://github.com/python-poetry/poetry) (**required**)
+- [`pyenv`](https://github.com/pyenv/pyenv) (**required**)  
 - `pycharm 2017+` or `vscode`
 
 

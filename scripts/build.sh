@@ -3,4 +3,4 @@
 set -e
 set -x
 
-pipenv run python setup.py sdist ${@}
+poetry build ${@}

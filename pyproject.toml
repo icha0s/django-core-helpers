@@ -1,8 +1,103 @@
 [tool.black]
 line-length = 120
+target-version = ['py36']
+include = '\.pyi?$'
 exclude = '''
-/(
-    \.git
-  | migrations
-)/
+(
+  /(
+      \.cache
+    | \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.pytest_cache
+    | \.tox
+    | \.venv
+    | __pycache__
+    | _build
+    | buck-out
+    | build
+    | dist
+    | docs
+    | migrations
+  )/
+)
 '''
+
+[tool.isort]
+profile="black"
+
+[tool.poetry]
+name = "django-core-helpers"
+version = "0.1.1"
+description = "Core helpers for Django and Django Rest Framework"
+authors = ["Vyacheslav Onufrienko <onufrienkovi@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+documentation = ""
+repository = "https://github.com/onufrienkovi/django-core-helpers"
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+packages = [
+    { include = "core_helpers" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+environs = "^9.3.1"
+structlog = "^20.2.0"
+typing-extensions = "^3.7.4"
+requests = {version = "^2.25.1", optional=true}
+requests-mock = {version = "^1.8.0", optional=true}
+pytest-django = {version = "^4.1.0", optional=true}
+pytest = {version = "^6.2.2", optional=true}
+codecov = {version = "^2.1.11", optional=true}
+coverage = {version = "^5.4", optional=true}
+freezegun = {version = "^1.1.0", optional=true}
+
+pytest-cov = {version = "^2.11.1", optional=true}
+pytest-pythonpath = {version = "^0.7.3", optional=true}
+
+
+sphinx = {version = "^3.4.3", optional = true}
+sphinx-rtd-theme = {version = "^0.5.1", optional = true}
+
+[tool.poetry.dev-dependencies]
+Django = "^3.1.6"
+wemake-python-styleguide = "^0.15.0"
+black = "^20.8b1"
+autoflake = "^1.4"
+tox = "^3.21.4"
+ipdb = "^0.13.4"
+
+
+[tool.poetry.extras]
+docs = [
+    "sphinx",
+    "sphinx-rtd-theme"
+]
+lint = ["flake8", "wemake-python-styleguide", "isort"]
+test = [
+    "pytest",
+    "codecov",
+    "coverage",
+    "requests",
+    "requests-mock",
+    "pytest-cov",
+    "pytest-django",
+    "pytest-pythonpath",
+    "freezegun",
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

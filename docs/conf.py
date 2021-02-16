@@ -1,6 +1,7 @@
 import os
 import sys
 from contextlib import suppress
+
 from core_helpers import VERSION
 
 sys.path.insert(0, os.path.abspath('..'))
